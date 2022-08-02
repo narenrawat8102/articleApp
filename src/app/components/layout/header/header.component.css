@@ -1,0 +1,42 @@
+/* Header CSS Starts here  */
+
+nav {
+  height: 80px;
+  padding: 10px 50px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+
+ul.list {
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  display: inline-block;
+  padding: 5px 20px;
+}
+
+.list li a {
+  color: white;
+  text-decoration: none;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
