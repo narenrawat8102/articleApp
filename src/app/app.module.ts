@@ -7,12 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FooterComponent } from './components/layout/footer/footer.component';
-import { ButtonsComponent } from './buttons/buttons.component';
 import { Footer1Component } from './components/layout/footer1/footer1.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, ButtonsComponent, Footer1Component],
+  declarations: [AppComponent, HeaderComponent, Footer1Component],
   imports: [
     BrowserModule,
     AppRoutingModule,
