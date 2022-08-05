@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="head">
+    <h3>Latest Articles</h3>
+  </div>
+  <div *ngFor="let article of latestArticles$ | async" class="latest-art">
+    <h4>
+      <a href="#">
+        <i>{{ article.articleName }}</i>
+      </a>
+    </h4>
+    <h5>{{ article.articleAuthor }}</h5>
+  </div>
+</div>
