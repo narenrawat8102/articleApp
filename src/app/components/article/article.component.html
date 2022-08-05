@@ -1,0 +1,25 @@
+<div *ngFor="let article of articles" class="art">
+  <h5>{{ article.category }}/Posted: {{ article.creationDate }}</h5>
+  <h1>{{ article.articleName }}</h1>
+  <h6>
+    <i>{{ article.articleAuthor }}</i>
+  </h6>
+  <p>{{ article.articleDescription }}</p>
+</div>
+
+<!-- <table class="table">
+  <thead>
+    <tr>
+      <th>Article Name</th>
+      <th>Article Author</th>
+      <th>Article Category</th>
+    </tr>
+  </thead>
+  <tbody> -->
+<!-- <tr *ngFor="let item of articles">
+      <td>{{ item.articleName }}</td>
+      <td>{{ item.articleAuthor }}</td>
+      <td>{{ item.category }}</td>
+    </tr>
+  </tbody>
+</table> -->
