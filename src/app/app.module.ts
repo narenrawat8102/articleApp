@@ -15,6 +15,7 @@ import { LatestArticleComponent } from './components/latest-article/latest-artic
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     LatestArticleComponent,
     ArticleDetailComponent,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

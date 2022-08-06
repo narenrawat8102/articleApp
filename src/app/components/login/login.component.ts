@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataServiceService } from 'src/app/services/data-service.service';
-import { Signup } from '../modals/article';
+import { Login } from '../modals/article';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
   constructor(
     private dataService: DataServiceService,
     private router: Router
@@ -16,13 +16,15 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(userDetails: Signup): void {
+  onSubmit(userDetails: Login): void {
     console.log(userDetails);
-    this.dataService.signup(userDetails).subscribe((signupRes: any) => {
-      if (signupRes.status === true) {
+    this.dataService.login(userDetails).subscribe((loginRes: any) => {
+      // console.log(loginRes);
+
+      if (loginRes.status === true) {
         // to set the global flag for logged in user
         sessionStorage.setItem('isLoggedIn', 'true');
-        sessionStorage.setItem('token', signupRes.token);
+        sessionStorage.setItem('token', loginRes.token);
         this.router.navigate(['/']);
       }
     });
