@@ -12,6 +12,7 @@ import { HomePageComponent } from './components/pages/home-page/home-page.compon
 import { ArticleComponent } from './components/article/article.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LatestArticleComponent } from './components/latest-article/latest-article.component';
+import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LatestArticleComponent } from './components/latest-article/latest-artic
     HomePageComponent,
     ArticleComponent,
     LatestArticleComponent,
+    ArticleDetailComponent,
   ],
   imports: [
     BrowserModule,

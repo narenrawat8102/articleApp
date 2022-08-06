@@ -1,6 +1,6 @@
-<div *ngFor="let article of articles" class="art">
-  <h5>{{ article.category }}/Posted: {{ article.creationDate }}</h5>
-  <h1>{{ article.articleName }}</h1>
+<div *ngFor="let article of articles; index as i" class="art">
+  <h5>{{ article.category }} /Posted: {{ article.creationDate }}</h5>
+  <h1 (click)="goToArticleDetails(article._id)">{{ article.articleName }}</h1>
   <h6>
     <i>{{ article.articleAuthor }}</i>
   </h6>
