@@ -13,6 +13,8 @@ import { ArticleComponent } from './components/article/article.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LatestArticleComponent } from './components/latest-article/latest-article.component';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
+import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,11 @@ import { ArticleDetailComponent } from './components/article-detail/article-deta
     ArticleComponent,
     LatestArticleComponent,
     ArticleDetailComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
