@@ -1,0 +1,33 @@
+.container {
+  padding: 30px 20px;
+}
+
+.head h3 {
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: red;
+}
+
+.latest-art {
+  padding: 5px;
+  /* border-top: 1px solid darkgrey; */
+  /* border-bottom: 1px solid darkgrey; */
+}
+
+.latest-art h5 {
+  font-size: 18px;
+  color: #000;
+}
+
+.latest-art h4 {
+  margin-bottom: 5px;
+}
+
+.latest-art h4 a {
+  margin-bottom: 5px;
+  font-size: 20px;
+  /* font-weight: 600; */
+  color: dimgray;
+  text-decoration: none;
+}

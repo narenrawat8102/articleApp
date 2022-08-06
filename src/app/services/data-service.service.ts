@@ -7,11 +7,17 @@ import { Article } from '../components/modals/article';
   providedIn: 'root',
 })
 export class DataServiceService {
-  getArticlesUrl = 'http://localhost:4000/api/getAllArticles';
+  baseUrl = 'http://localhost:4000/api/';
 
   constructor(private http: HttpClient) {}
 
+  // to get the list of all articles
   getAllArticleList(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.getArticlesUrl);
+    return this.http.get<Article[]>(this.baseUrl + 'getAllArticles');
+  }
+
+  // to get the latest articles
+  getLatestArticles(): Observable<Article[]> {
+    return this.http.get<Article[]>(this.baseUrl + 'getLatestArticles');
   }
 }

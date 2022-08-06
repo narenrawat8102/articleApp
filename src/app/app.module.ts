@@ -11,6 +11,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { ArticleComponent } from './components/article/article.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LatestArticleComponent } from './components/latest-article/latest-article.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomePageComponent,
     ArticleComponent,
+    LatestArticleComponent,
   ],
   imports: [
     BrowserModule,
