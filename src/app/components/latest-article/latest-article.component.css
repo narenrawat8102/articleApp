@@ -3,8 +3,8 @@
 }
 
 .head h3 {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   text-decoration: underline;
   color: red;
 }
@@ -20,14 +20,8 @@
   color: #000;
 }
 
-.latest-art h4 {
+.latest-art h2 {
   margin-bottom: 5px;
-}
-
-.latest-art h4 a {
-  margin-bottom: 5px;
-  font-size: 20px;
-  /* font-weight: 600; */
   color: dimgray;
-  text-decoration: none;
+  cursor: pointer;
 }

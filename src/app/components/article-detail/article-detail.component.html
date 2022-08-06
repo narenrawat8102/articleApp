@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 col-md-6 col-12">
+      <div *ngIf="article" class="art-detail">
+        <p class="explore">{{ article.category }}</p>
+        <h1>{{ article.articleTitle }}</h1>
+        <h6>{{ article.articleAuthor }}</h6>
+        <p>{{ article.articleDescription }}</p>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-6 col-12">
+      <app-latest-article></app-latest-article>
+    </div>
+  </div>
+</div>

@@ -20,4 +20,11 @@ export class DataServiceService {
   getLatestArticles(): Observable<Article[]> {
     return this.http.get<Article[]>(this.baseUrl + 'getLatestArticles');
   }
+
+  // to get the single article details
+  getSingleArticle(articleId: string): Observable<Article> {
+    return this.http.get<Article>(
+      this.baseUrl + 'getArticleDetails/' + articleId
+    );
+  }
 }

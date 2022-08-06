@@ -4,5 +4,5 @@ export interface Article {
   articleName: string;
   category: string;
   creationDate: string;
-  _id?: string;
+  _id: string;
 }
