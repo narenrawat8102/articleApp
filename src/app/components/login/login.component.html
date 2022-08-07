@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div id="first" class="col-lg-6 col-md-6 col-12">
+      <img src="assets/login.jpeg" alt="Log in image" />
+    </div>
+
+    <div id="second" class="col-lg-6 col-md-6 col-12">
+      <div class="register-heading">
+        <h2>Member Login</h2>
+      </div>
+
+      <br />
+
+      <div class="resiterForm">
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
+          <div class="form-group">
+            <label for="email">Email </label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              name="email"
+              ngModel
+            />
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              ngModel
+            />
+          </div>
+
+          <br />
+
+          <div class="btns">
+            <button class="btn btn-success" type="submit">Log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

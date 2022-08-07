@@ -6,3 +6,15 @@ export interface Article {
   creationDate: string;
   _id: string;
 }
+
+export interface Signup {
+  email: string;
+  username: string;
+  password: string;
+  phone: string;
+}
+
+export interface Login {
+  email: string;
+  password: string;
+}
