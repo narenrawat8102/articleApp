@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataServiceService } from 'src/app/services/data-service.service';
 import { Signup } from '../modals/article';
@@ -9,6 +10,11 @@ import { Signup } from '../modals/article';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
+  @ViewChild('registerForm') myForm: NgForm | any;
+
+  isUserRegistered: boolean = false;
+  message: string = '';
+
   constructor(
     private dataService: DataServiceService,
     private router: Router
@@ -16,14 +22,18 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(userDetails: Signup): void {
-    console.log(userDetails);
+  onSubmit(): void {
+    const userDetails = this.myForm.value;
     this.dataService.signup(userDetails).subscribe((signupRes: any) => {
       if (signupRes.status === true) {
         // to set the global flag for logged in user
         sessionStorage.setItem('isLoggedIn', 'true');
         sessionStorage.setItem('token', signupRes.token);
         this.router.navigate(['/']);
+      } else {
+        this.isUserRegistered = true;
+        this.message = signupRes.msg;
+        this.myForm.reset();
       }
     });
   }

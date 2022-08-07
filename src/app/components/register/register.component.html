@@ -12,40 +12,55 @@
 
       <br />
 
+      <!-- Form  -->
       <div class="resiterForm">
-        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
+        <form #registerForm="ngForm" name="form" (ngSubmit)="onSubmit()">
+          <!-- Username  -->
           <div class="form-group">
-            <label for="username">Full Name</label>
+            <label for="username">Username*</label>
             <input
               type="text"
               class="form-control"
-              id="firstname"
+              id="username"
+              placeholder="Enter Username"
               name="username"
               ngModel
+              required
             />
           </div>
 
           <br />
 
+          <!-- Email  -->
           <div class="form-group">
-            <label for="email">Email </label>
+            <label for="email">Email*</label>
             <input
               type="text"
               class="form-control"
               id="email"
+              placeholder="Enter email"
               name="email"
               ngModel
+              required
+              email
+              #email="ngModel"
             />
+
+            <small *ngIf="!email.valid && email.touched" class="text-danger"
+              >Please Enter Valid Email</small
+            >
           </div>
 
           <br />
 
+          <!-- Phone No.  -->
           <div class="form-group">
-            <label for="phoneNo.">Phone No.</label>
+            <label for="phone.">Phone No.</label>
             <input
               type="text"
               class="form-control"
-              id="phoneNo."
+              id="phone"
+              placeholder="Enter Phone No."
               name="phone"
               ngModel
             />
@@ -53,21 +68,49 @@
 
           <br />
 
+          <!-- Password  -->
           <div class="form-group">
             <label for="password">Password</label>
             <input
               type="password"
               class="form-control"
               id="password"
+              placeholder="Enter Password"
               name="password"
               ngModel
+              required
             />
+            <p *ngIf="isUserRegistered" class="text-danger">{{ message }}</p>
           </div>
 
           <br />
 
+          <!-- Radio Buttons for Gender  -->
+          <!-- <div class="form-group">
+            <div class="form-check" *ngFor="let gender of genders">
+              <input
+                type="radio"
+                id="{{ gender.id }}"
+                class="form-check-input"
+                name="gender"
+                [ngModel]="defaultGender"
+                value="{{ gender.value }}"
+              />
+              <label class="form-check-label" for="{{ gender.id }}">
+                {{ gender.value }}
+              </label>
+            </div>
+          </div> -->
+
+          <br />
+
+          <!-- Submit Button  -->
           <div class="btns">
-            <button class="btn btn-success" type="submit">
+            <button
+              class="btn btn-success"
+              type="submit"
+              [disabled]="!registerForm.form.valid"
+            >
               Create Account
             </button>
           </div>
