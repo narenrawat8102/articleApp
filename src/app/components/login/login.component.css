@@ -12,11 +12,16 @@
   background-color: #fff;
 }
 
-.register-heading h2 {
+.login-heading h2 {
   margin: 10px 0;
   /* text-align: center; */
 }
 
 .btns {
   margin: 10px 0;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+  box-shadow: 0 0 13px inset rgba(255, 0, 0, 0.9);
 }

@@ -5,42 +5,62 @@
     </div>
 
     <div id="second" class="col-lg-6 col-md-6 col-12">
-      <div class="register-heading">
+      <div class="login-heading">
         <h2>Member Login</h2>
       </div>
 
       <br />
 
-      <div class="resiterForm">
-        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
+      <div class="loginForm">
+        <form #loginForm="ngForm" name="form" (ngSubmit)="onSubmit()">
+          <!-- Email  -->
           <div class="form-group">
             <label for="email">Email </label>
             <input
               type="text"
               class="form-control"
               id="email"
+              placeholder="Enter Your Email"
               name="email"
               ngModel
+              required
+              email
+              #email="ngModel"
             />
+            <small *ngIf="!email.valid && email.touched" class="text-danger"
+              >Please Enter Valid Email</small
+            >
           </div>
 
           <br />
 
+          <!-- Password  -->
           <div class="form-group">
             <label for="password">Password</label>
             <input
               type="password"
               class="form-control"
               id="password"
+              placeholder="Enter Password"
               name="password"
               ngModel
+              required
             />
+            <p *ngIf="!isUserRegistered" class="text-danger">
+              {{ message }}
+            </p>
           </div>
 
           <br />
 
           <div class="btns">
-            <button class="btn btn-success" type="submit">Log in</button>
+            <button
+              class="btn btn-success"
+              type="submit"
+              [disabled]="!loginForm.form.valid"
+            >
+              Log in
+            </button>
           </div>
         </form>
       </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataServiceService } from 'src/app/services/data-service.service';
 import { Login } from '../modals/article';
@@ -9,6 +10,11 @@ import { Login } from '../modals/article';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  @ViewChild('loginForm') loginForm: NgForm | any;
+
+  isUserRegistered: boolean = true;
+  message: string = '';
+
   constructor(
     private dataService: DataServiceService,
     private router: Router
@@ -16,8 +22,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(userDetails: Login): void {
-    console.log(userDetails);
+  onSubmit(): void {
+    const userDetails = this.loginForm.value;
     this.dataService.login(userDetails).subscribe((loginRes: any) => {
       // console.log(loginRes);
 
@@ -26,6 +32,10 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('isLoggedIn', 'true');
         sessionStorage.setItem('token', loginRes.token);
         this.router.navigate(['/']);
+      } else {
+        this.isUserRegistered = false;
+        this.message = loginRes.msg;
+        this.loginForm.reset();
       }
     });
   }
